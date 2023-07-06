@@ -1,46 +1,56 @@
-public class Calculator {
+import java.util.Random;
+
+public class calculator {
 
     public static void main(String[] args) {
-        int a = 10;
-        int b = 3;
+        Random random = new Random();
+        int a = random.nextInt(100);
+        int b = random.nextInt(100);
+        int operator = random.nextInt(6);
+        String sign = "";
         int result;
         int result2 = 1;
 
-        //здесь вписываем знак (+ - * / % ^)
-        String sign = "-";
 
-        if (sign.equals("+")) {
+        if (operator == 0) {
             result = a + b;
+            sign = "+";
             System.out.println(a + " " + sign + " " + b + " = " + result);
-        } else if (sign.equals("-")) {
+        } else if (operator == 1) {
             result = a - b;
+            sign = "-";
             System.out.println(a + " " + sign + " " + b + " = " + result);
-        } else if (sign.equals("*")) {
+        } else if (operator == 2) {
             result = a * b;
+            sign = "*";
             System.out.println(a + " " + sign + " " + b + " = " + result);
-        } else if (sign.equals("/")) {
+        } else if (operator == 3) {
             if (b != 0) {
                 result = a / b;
+                sign = "/";
                 System.out.println(a + " " + sign + " " + b + " = " + result);
             } else {
                 System.out.println("На ноль делить нельзя!");
                 return;
             }
-        } else if (sign.equals("%")) {
+        } else if (operator == 4) {
             if (b != 0) {
                 result = a % b;
+                sign = "%";
                 System.out.println(a + " " + sign + " " + b + " = " + result);
             } else {
                 System.out.println("На ноль делить нельзя!");
                 return;
             }
             System.out.println(a + " " + sign + " " + b + " = " + result);
-        } else if (sign.equals("^")) {
+        } else if (operator == 5) {
             for (int i = 0; i < b; i++) {
                 result2 = result2 * a;
             }
+            sign = "+";
             System.out.println(a + " " + sign + " " + b + " = " + result2);
         }
     }
 }
+
 
